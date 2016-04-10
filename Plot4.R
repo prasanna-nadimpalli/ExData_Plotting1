@@ -1,5 +1,6 @@
 library(lubridate)
 
+## Get and clean the data
 powerData <- read.csv("household_power_consumption.txt", sep =";", na.strings ="?")
 
 powerDataFiltered <- subset(powerData, Date == "1/2/2007" | Date =="2/2/2007")
@@ -8,7 +9,7 @@ powerDataFiltered.2 <- transform(powerDataFiltered, Datetime = as.POSIXlt(dmy(po
 
 png(file="plot4.png",width=480,height=480,units='px')
 
-    
+## plan the arrangment of graphs 2x2
 par(mfrow=c(2,2))
     
     ## top-left
